@@ -1,0 +1,4 @@
+# requirements.txt
+gradio>=4.0.0 # Use a recent version
+google-generativeai>=0.5.0 # Check for latest version
+python-dotenv>=1.0.0

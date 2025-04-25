@@ -134,3 +134,32 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 }); // End DOMContentLoaded
+
+// Add this to your existing script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('gradio-toggle-button');
+    const chatContainer = document.getElementById('gradio-chatbot-container');
+    const iframe = document.getElementById('gradio-iframe');
+    const gradioAppUrl = 'https://huggingface.co/spaces/YourUsername/YourSpaceName'; // REPLACE THIS
+
+    let isChatOpen = false;
+    let isIframeLoaded = false;
+
+    toggleButton.addEventListener('click', () => {
+        isChatOpen = !isChatOpen;
+        if (isChatOpen) {
+            // Load iframe src only when first opened
+            if (!isIframeLoaded) {
+                iframe.src = gradioAppUrl;
+                isIframeLoaded = true;
+            }
+            chatContainer.style.display = 'block';
+            // Optional: Change icon
+            toggleButton.innerHTML = '<i class="bi bi-x-lg"></i>';
+        } else {
+            chatContainer.style.display = 'none';
+             // Optional: Change icon back
+            toggleButton.innerHTML = '<i class="bi bi-robot"></i>';
+        }
+    });
+});

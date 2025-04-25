@@ -627,5 +627,20 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
 
+<!-- Add near the end of <body> -->
+    <div id="gradio-chatbot-container" style="position: fixed; bottom: 80px; right: 20px; width: 370px; height: 600px; max-width: 90vw; max-height: 70vh; box-shadow: 0 5px 25px rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden; z-index: 1050; display: none;">
+        <iframe
+           id="gradio-iframe"
+           src="" <!-- Initially empty, set via JS -->
+           frameborder="0"
+           width="100%"
+           height="100%"
+       ></iframe>
+   </div>
+   
+   <div id="gradio-toggle-button" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: linear-gradient(45deg, #0d6efd, #6f42c1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1051;">
+       <i class="bi bi-robot"></i> <!-- Assuming you still use Bootstrap Icons -->
+   </div>
+
 </body>
 </html>
