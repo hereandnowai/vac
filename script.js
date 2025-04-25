@@ -135,30 +135,23 @@ window.addEventListener('DOMContentLoaded', event => {
 
 }); // End DOMContentLoaded
 
-// Add this to your existing script.js
+// In script.js, modify the second DOMContentLoaded listener:
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('gradio-toggle-button');
     const chatContainer = document.getElementById('gradio-chatbot-container');
-    const iframe = document.getElementById('gradio-iframe');
-    const gradioAppUrl = 'https://huggingface.co/spaces/YourUsername/YourSpaceName'; // REPLACE THIS
-
+    // const iframe = document.getElementById('gradio-iframe'); // No longer needed
+    // const gradioAppUrl = '...'; // No longer needed
     let isChatOpen = false;
-    let isIframeLoaded = false;
+    // let isIframeLoaded = false; // No longer needed
 
     toggleButton.addEventListener('click', () => {
         isChatOpen = !isChatOpen;
         if (isChatOpen) {
-            // Load iframe src only when first opened
-            if (!isIframeLoaded) {
-                iframe.src = gradioAppUrl;
-                isIframeLoaded = true;
-            }
+            // No need to set src anymore
             chatContainer.style.display = 'block';
-            // Optional: Change icon
             toggleButton.innerHTML = '<i class="bi bi-x-lg"></i>';
         } else {
             chatContainer.style.display = 'none';
-             // Optional: Change icon back
             toggleButton.innerHTML = '<i class="bi bi-robot"></i>';
         }
     });

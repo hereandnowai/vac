@@ -1,4 +1,6 @@
 # requirements.txt
-gradio>=4.0.0 # Use a recent version
-google-generativeai>=0.5.0 # Check for latest version
+gradio>=4.0.0
+google-generativeai>=0.5.0
 python-dotenv>=1.0.0
+requests>=2.28.0        # Add for fetching website
+beautifulsoup4>=4.11.0  # Add for parsing HTML
